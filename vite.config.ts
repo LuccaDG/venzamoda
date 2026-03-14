@@ -25,7 +25,6 @@ export default defineConfig(({mode}) => {
               if (id.includes('react')) return 'vendor-react';
               if (id.includes('motion')) return 'vendor-motion';
               if (id.includes('lucide-react')) return 'vendor-lucide';
-              if (id.includes('@google/genai')) return 'vendor-genai';
               return 'vendor';
             }
           },
