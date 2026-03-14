@@ -1,0 +1,43 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // ===============================================================
+    // Assumed Data Model
+    // ===============================================================
+    //
+    // Collection: reviews
+    // Document ID: auto-generated
+    // Fields:
+    //   - name: string (required, 1-50 chars)
+    //   - role: string (optional, 0-50 chars)
+    //   - text: string (required, 1-500 chars)
+    //   - rating: number (required, 1-5)
+    //   - createdAt: timestamp (required)
+    //
+    // ===============================================================
+
+    // Helper Functions
+    function isValidReview(data) {
+      return data.keys().hasAll(['name', 'text', 'rating', 'createdAt']) &&
+             data.keys().hasOnly(['name', 'role', 'text', 'rating', 'createdAt']) &&
+             data.name is string && data.name.size() >= 1 && data.name.size() <= 50 &&
+             (!('role' in data) || (data.role is string && data.role.size() <= 50)) &&
+             data.text is string && data.text.size() >= 1 && data.text.size() <= 500 &&
+             data.rating is number && data.rating >= 1 && data.rating <= 5 &&
+             data.createdAt is timestamp;
+    }
+
+    match /reviews/{reviewId} {
+      // Allow anyone to read reviews to see what others say
+      allow read: if true;
+      
+      // Allow anyone to create a review (as requested by the user for visitors)
+      // but with strict validation to prevent abuse
+      allow create: if isValidReview(request.resource.data) && 
+                       request.resource.data.createdAt == request.time;
+      
+      // No updates or deletes allowed by visitors
+      allow update, delete: if false;
+    }
+  }
+}
