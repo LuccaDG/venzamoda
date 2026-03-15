@@ -97,15 +97,15 @@ const App: React.FC = () => {
     <div className="min-h-screen selection:bg-brand-terracotta/20">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-brand-nude">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="flex items-center space-x-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 md:h-20 flex items-center justify-between">
+          <div className="flex items-center space-x-3 md:space-x-4">
             <img 
               src={logoUrl} 
               alt="Venza Moda Logo" 
-              className="h-12 w-12 rounded-full object-cover border border-brand-nude"
+              className="h-10 w-10 md:h-12 md:w-12 rounded-full object-cover border border-brand-nude"
               referrerPolicy="no-referrer"
             />
-            <div className="text-xl md:text-2xl font-serif font-bold tracking-widest text-brand-terracotta uppercase">
+            <div className="text-lg md:text-2xl font-serif font-bold tracking-widest text-brand-terracotta uppercase truncate max-w-[150px] sm:max-w-none">
               VENZA MODA
             </div>
           </div>
@@ -145,13 +145,13 @@ const App: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-2xl text-white"
+            className="max-w-2xl text-white text-center md:text-left"
           >
-            <span className="uppercase tracking-[0.3em] text-sm mb-4 block font-medium">Venza Moda & Acessórios</span>
-            <h1 className="text-5xl md:text-7xl mb-8 leading-[1.1]">
+            <span className="uppercase tracking-[0.3em] text-xs sm:text-sm mb-4 block font-medium">Venza Moda & Acessórios</span>
+            <h1 className="text-4xl sm:text-5xl md:text-7xl mb-8 leading-[1.1]">
               Vista a sua <span className="italic">essência</span>, revele sua força.
             </h1>
-            <p className="text-lg md:text-xl mb-10 text-brand-nude/90 font-light leading-relaxed">
+            <p className="text-base md:text-xl mb-10 text-brand-nude/90 font-light leading-relaxed">
               Curadoria premium para a mulher que equilibra todos os seus papéis com elegância e determinação.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -179,14 +179,14 @@ const App: React.FC = () => {
       </section>
 
       {/* Sobre Nós */}
-      <section id="sobre" className="py-24 bg-brand-nude/30">
+      <section id="sobre" className="py-16 md:py-24 bg-brand-nude/30">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             <motion.div 
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative"
+              className="relative order-2 md:order-1"
             >
               <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
                 <img 
@@ -207,10 +207,11 @@ const App: React.FC = () => {
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              className="order-1 md:order-2 text-center md:text-left"
             >
               <span className="text-brand-terracotta font-semibold uppercase tracking-widest text-sm mb-4 block">Nossa História</span>
-              <h2 className="text-4xl md:text-5xl mb-8 leading-tight">Venza Moda: De Mãe e Estudante a Empreendedora</h2>
-              <div className="space-y-6 text-brand-dark/80 leading-relaxed text-lg">
+              <h2 className="text-3xl md:text-5xl mb-8 leading-tight">Venza Moda: De Mãe e Estudante a Empreendedora</h2>
+              <div className="space-y-6 text-brand-dark/80 leading-relaxed text-base md:text-lg">
                 <p>
                   Olá, eu sou <strong>Sara Fernandes</strong>. Aos 32 anos, minha vida é um mosaico de papéis: sou mãe da Amanda e do Heitor, estudante de Estética e Cosméticos, e uma mulher movida por uma fé inabalável.
                 </p>
@@ -227,11 +228,11 @@ const App: React.FC = () => {
       </section>
 
       {/* Vitrine Estratégica */}
-      <section id="colecao" className="py-24">
+      <section id="colecao" className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl mb-4">Curadoria Venza</h2>
-            <p className="text-brand-dark/60 max-w-xl mx-auto">Peças selecionadas para elevar seu estilo em todas as ocasiões.</p>
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-5xl mb-4">Curadoria Venza</h2>
+            <p className="text-brand-dark/60 max-w-xl mx-auto text-sm md:text-base">Peças selecionadas para elevar seu estilo em todas as ocasiões.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -277,9 +278,9 @@ const App: React.FC = () => {
       </section>
 
       {/* Diferenciais */}
-      <section id="diferenciais" className="py-24 bg-brand-dark text-white">
+      <section id="diferenciais" className="py-16 md:py-24 bg-brand-dark text-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="grid md:grid-cols-3 gap-8 md:gap-12">
             <div className="text-center p-8 border border-white/10 rounded-2xl hover:bg-white/5 transition-colors">
               <div className="w-16 h-16 bg-brand-terracotta rounded-full flex items-center justify-center mx-auto mb-6">
                 <Heart size={32} />
@@ -308,11 +309,11 @@ const App: React.FC = () => {
       </section>
 
       {/* Prova Social */}
-      <section className="py-24 bg-white">
+      <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl mb-4">O que dizem nossas clientes</h2>
-            <p className="text-brand-dark/60 mb-8">Depoimentos reais de quem vive a experiência Venza.</p>
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-5xl mb-4">O que dizem nossas clientes</h2>
+            <p className="text-brand-dark/60 mb-8 text-sm md:text-base">Depoimentos reais de quem vive a experiência Venza.</p>
             <div className="flex justify-center space-x-1 text-brand-gold">
               {[...Array(5)].map((_, i) => <Star key={i} fill="currentColor" size={20} />)}
             </div>
@@ -368,9 +369,9 @@ const App: React.FC = () => {
 
           {/* Formulário de Avaliação - Sempre Visível */}
           <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <h3 className="text-3xl mb-4">Sua opinião é fundamental</h3>
-              <p className="text-brand-dark/60">Compartilhe sua experiência e ajude outras mulheres a escolherem com confiança.</p>
+            <div className="text-center mb-8 md:mb-12">
+              <h3 className="text-2xl md:text-3xl mb-4">Sua opinião é fundamental</h3>
+              <p className="text-brand-dark/60 text-sm md:text-base">Compartilhe sua experiência e ajude outras mulheres a escolherem com confiança.</p>
             </div>
 
             <form onSubmit={handleSubmitReview} className="bg-brand-nude/10 p-8 md:p-12 rounded-[2rem] border border-brand-nude shadow-sm">
@@ -436,17 +437,17 @@ const App: React.FC = () => {
             </form>
           </div>
           
-          <div className="mt-16 flex flex-wrap justify-center gap-8 items-center opacity-50 grayscale">
-            <div className="flex items-center space-x-2">
-              <ShieldCheck size={24} />
+          <div className="mt-12 md:mt-16 flex flex-wrap justify-center gap-6 md:gap-8 items-center opacity-50 grayscale">
+            <div className="flex items-center space-x-2 text-sm md:text-base">
+              <ShieldCheck size={20} className="md:w-6 md:h-6" />
               <span className="font-semibold">Compra 100% Segura</span>
             </div>
-            <div className="flex items-center space-x-2">
-              <Package size={24} />
+            <div className="flex items-center space-x-2 text-sm md:text-base">
+              <Package size={20} className="md:w-6 md:h-6" />
               <span className="font-semibold">Entrega Garantida</span>
             </div>
-            <div className="flex items-center space-x-2">
-              <User size={24} />
+            <div className="flex items-center space-x-2 text-sm md:text-base">
+              <User size={20} className="md:w-6 md:h-6" />
               <span className="font-semibold">Privacidade Protegida</span>
             </div>
           </div>
@@ -454,18 +455,18 @@ const App: React.FC = () => {
       </section>
 
       {/* CTA Final */}
-      <section className="py-24 bg-brand-terracotta text-white overflow-hidden relative">
+      <section className="py-16 md:py-24 bg-brand-terracotta text-white overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
-          <h2 className="text-4xl md:text-6xl mb-8">Pronta para transformar sua autoestima?</h2>
-          <p className="text-xl mb-12 text-white/80 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-6xl mb-6 md:mb-8">Pronta para transformar sua autoestima?</h2>
+          <p className="text-lg md:text-xl mb-10 md:mb-12 text-white/80 max-w-2xl mx-auto">
             Fale agora com nossa consultora e descubra as peças que vão revelar a sua melhor versão.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-6">
+          <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-6">
             <a 
               href={instagramUrl} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="bg-white text-brand-terracotta px-10 py-5 rounded-full font-bold text-xl hover:scale-105 transition-transform flex items-center justify-center"
+              className="bg-white text-brand-terracotta px-8 md:px-10 py-4 md:py-5 rounded-full font-bold text-lg md:text-xl hover:scale-105 transition-transform flex items-center justify-center"
             >
               <Instagram className="mr-2" />
               Ver no Instagram
@@ -474,7 +475,7 @@ const App: React.FC = () => {
               href={whatsappUrl} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="border-2 border-white text-white px-10 py-5 rounded-full font-bold text-xl hover:bg-white hover:text-brand-terracotta transition-all flex items-center justify-center"
+              className="border-2 border-white text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-bold text-lg md:text-xl hover:bg-white hover:text-brand-terracotta transition-all flex items-center justify-center"
             >
               <MessageCircle className="mr-2" />
               Entrar no Grupo VIP
@@ -489,15 +490,15 @@ const App: React.FC = () => {
       {/* Footer */}
       <footer className="py-12 bg-brand-dark text-white/60 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            <div className="text-xl font-serif font-bold tracking-widest text-white uppercase">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+            <div className="text-lg md:text-xl font-serif font-bold tracking-widest text-white uppercase">
               VENZA MODA & ACESSÓRIOS
             </div>
             <div className="flex space-x-6">
               <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Instagram size={24} /></a>
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><MessageCircle size={24} /></a>
             </div>
-            <div className="text-sm">
+            <div className="text-xs md:text-sm">
               © 2024 Venza Moda & Acessórios. Todos os direitos reservados.
             </div>
           </div>
